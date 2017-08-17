@@ -1,7 +1,6 @@
 {{ $gohugoio := "gohugoio" }}
 {{ $avatar := "/img/avatar.jpg" }}
 <!-- Site & Page Meta Data -->
-{{ if eq .Type "post" }}
 
   <!-- Page Author & Description -->
   <meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}" />
@@ -22,7 +21,6 @@
     <meta name="twitter:image" content="{{ $avatar | absURL }}" />
   {{ end }}
 
-{{ else }}
 
   <!-- Site Author & Description -->
   <meta name="author" content="{{ .Site.Params.author }}" />
@@ -35,7 +33,6 @@
   <meta name="twitter:description" content="{{ .Site.Params.description }}" />
   <meta name="twitter:image" content="{{ $avatar | absURL }}" />
 
-{{ end }}
 
 <!-- Site Generator -->
 <meta name="generator" content="Hugo {{ .Hugo.Version }}" />

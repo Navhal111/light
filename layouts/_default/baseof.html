@@ -19,9 +19,9 @@
 
 </head>
   <body>
-
     <div class="suspension">
       <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      {{ if and (eq .Type "post") (eq .Kind "page") }}
         {{ if .Site.Params.changyan }}
         <a title="Go to comments" class="to-comment" href="#SOHUCS"><span class="icon icon-comment"></span></a>
         {{ else if .Site.DisqusShortname }}
@@ -29,6 +29,6 @@
         {{ else }}{{ end }}
       {{ end }}
     </div>
-    {{ block "main" . }}
+    {{ block "main" . }}{{ end }}
   </body>
 </html>

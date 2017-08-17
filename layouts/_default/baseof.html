@@ -19,6 +19,7 @@
 
 </head>
   <body>
+
     <div class="suspension">
       <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
         {{ if .Site.Params.changyan }}
@@ -26,6 +27,8 @@
         {{ else if .Site.DisqusShortname }}
         <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
         {{ else }}{{ end }}
+      {{ end }}
     </div>
+    {{ block "main" . }}
   </body>
 </html>

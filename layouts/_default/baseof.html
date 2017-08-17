@@ -6,7 +6,7 @@
 
   <!-- Page Title -->
   <title>
-main site
+
   </title>
 
   <!-- Shared Head -->
@@ -17,6 +17,7 @@ main site
 
 </head>
   <body>
+    {{ if ne .Kind "404" }}
     <div class="suspension">
       <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
       {{ if and (eq .Type "post") (eq .Kind "page") }}
@@ -28,5 +29,6 @@ main site
       {{ end }}
     </div>
     {{ end }}
+    {{ block "main" . }}{{ end }}
   </body>
 </html>

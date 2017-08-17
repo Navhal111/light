@@ -6,9 +6,7 @@
 
   <!-- Page Title -->
   <title>
-    {{- block "title" . -}}
-      {{ if eq .Kind "page" }}{{ .Title }}{{ else if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}
-    {{- end -}}
+main site
   </title>
 
   <!-- Shared Head -->
@@ -19,7 +17,6 @@
 
 </head>
   <body>
-    {{ if ne .Kind "404" }}
     <div class="suspension">
       <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
       {{ if and (eq .Type "post") (eq .Kind "page") }}
@@ -31,6 +28,5 @@
       {{ end }}
     </div>
     {{ end }}
-    {{ block "main" . }}{{ end }}
   </body>
 </html>
